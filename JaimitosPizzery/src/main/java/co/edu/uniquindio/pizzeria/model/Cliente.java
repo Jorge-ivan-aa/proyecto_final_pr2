@@ -1,22 +1,26 @@
 package co.edu.uniquindio.pizzeria.model;
 
+import java.util.ArrayList;
+
 public class Cliente extends Usuario {
 
-  private String dirección;
+  private String direccion;
   private String celular;
+  private ArrayList<Pedido> listaPedido;
 
-  public Cliente(String nombre, String dirección, String celular) {
+  public Cliente(String nombre, String direccion, String celular) {
     super(nombre);
-    this.dirección = dirección;
+    this.direccion = direccion;
     this.celular = celular;
+    this.listaPedido = new  ArrayList<>();
   }
 
-  public String getDirección() {
-      return dirección;
+  public String getDireccion() {
+      return direccion;
   }
 
-  public void setDirección(String dirección) {
-      this.dirección = dirección;
+  public void setDireccion(String direccion) {
+      this.direccion = direccion;
   }
 
   public String getCelular() {
@@ -25,6 +29,14 @@ public class Cliente extends Usuario {
 
   public void setCelular(String celular) {
       this.celular = celular;
+  }
+
+  public ArrayList<Pedido> getListaPedido() {
+        return listaPedido;
+  }
+
+  public  void addPedido(Pedido pedido) {
+      this.listaPedido.add(pedido);
   }
 
 }
